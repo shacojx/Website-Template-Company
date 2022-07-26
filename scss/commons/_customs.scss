@@ -1,0 +1,111 @@
+$directions: l, t, r, b;
+
+@function addUnit($v, $unit: px) {
+  @return $v + $unit;
+}
+@for $px from 1 to 51 {
+  .fs-#{$px} {
+    font-size: addUnit($px) !important;
+  }
+  @each $direction in $directions {
+    .p#{$direction}-#{$px} {
+      @if $direction== "l" {
+        padding-left: addUnit($px);
+      }
+
+      @if $direction== "t" {
+        padding-top: addUnit($px);
+      }
+
+      @if $direction== "r" {
+        padding-right: addUnit($px);
+      }
+
+      @if $direction== "b" {
+        padding-bottom: addUnit($px);
+      }
+    }
+
+    .m#{$direction}-#{$px} {
+      @if $direction== "l" {
+        margin-left: addUnit($px);
+      }
+
+      @if $direction== "t" {
+        margin-top: addUnit($px);
+      }
+
+      @if $direction== "r" {
+        margin-right: addUnit($px);
+      }
+
+      @if $direction== "b" {
+        margin-bottom: addUnit($px);
+      }
+    }
+  }
+}
+
+.container {
+  margin: auto;
+  max-width: 1740px;
+  padding: 0 20px;
+}
+
+@each $display in map-keys($displays) {
+  .d-#{$display} {
+    display: $display;
+  }
+}
+
+@each $breakpoint, $container-max-width in $container-max-widths {
+  @each $display in map-keys($displays) {
+    .d-#{$breakpoint}-#{$display} {
+      @include media-breakpoint-down($breakpoint, $grid-breakpoints) {
+        display: $display;
+      }
+    }
+  }
+}
+
+@each $align in $align-items {
+  .align-items-#{$align} {
+    align-items: $align;
+  }
+}
+
+@each $key, $value in $justify-content {
+  .justify-content-#{$key} {
+    justify-content: $value;
+  }
+}
+
+@each $transform in $text-transform {
+  .text-#{$transform} {
+    text-transform: $transform;
+  }
+}
+
+@each $text-align in $text-aligns {
+  .text-#{$text-align} {
+    text-align: $text-align;
+  }
+}
+
+@each $key, $text in $colors {
+  .text-#{$key} {
+    color: $text;
+  }
+}
+
+@each $position in $positions {
+  .position-#{$position} {
+    position: $position;
+  }
+}
+
+@each $direction in $flex-directions {
+  .flex-#{$direction} {
+    flex-direction: $direction;
+  }
+}

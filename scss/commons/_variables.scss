@@ -1,0 +1,56 @@
+/* variable */
+
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+
+$white: #fff;
+$black: #000;
+$text-primary: #010101;
+$font-family: 'Montserrat', sans-serif;
+// $font-logo: 'DroidLogo', sans-serif;
+
+$colors: (
+  'white': $white,
+  'black': $black,
+  'text-primary': $text-primary,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1112px,
+  xxl: 1780px
+) !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
+
+$displays: (
+  block: block,
+  flex: flex,
+  none: none,
+  inline-block: inline-block,
+  inline-flex: inline-flex,
+);
+
+$text-aligns: (center, left, right, justify);
+$align-items: (start, end, center, baseline, stretch);
+$flex-directions: (column, row, row-reverse, column-reverse);
+$justify-content: (
+  'start': start,
+  'end': end,
+  'center': center,
+  'between': space-between,
+  'around': space-around,
+);
+
+$text-transform: (uppercase, lowercase, capitalize);
+
+$positions: (fixed, absolute, relative)
+/* END: variable */
